@@ -2,8 +2,8 @@
 
 **Live Demo:** [http://34.67.217.255/](http://34.67.217.255/)
 
-![SignalSync Dashboard Live](<img width="1683" height="892" alt="image" src="https://github.com/user-attachments/assets/d99b95e0-06b7-4c07-8858-dfa528ebcb57" />
-)
+<img width="1683" height="892" alt="image" src="https://github.com/user-attachments/assets/3743eda9-f540-4117-80dc-8d66b8e10877" />
+
 
 ## 📌 The Problem Being Solved (B2B Premise)
 B2B companies (such as recruitment agencies, cloud hosting providers, and dev-tool SaaS companies) constantly need to identify highly-qualified leads. 
