@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2B Leads Dashboard | Hiring Signals</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dynamic-background"></div>
+    <div class="container">
+        <header class="glass-header">
+            <div class="logo">
+                <i class="fas fa-radar"></i>
+                <h1>Signal<span class="highlight">Sync</span></h1>
+            </div>
+            <nav style="display: flex; gap: 1rem;">
+                <a href="/api/export" class="btn-primary" style="background: var(--highlight); text-decoration:none;"><i
+                        class="fas fa-file-csv"></i> Export CSV</a>
+                <button class="btn-primary" onclick="loadData()"><i class="fas fa-sync-alt"></i> Refresh Data</button>
+            </nav>
+        </header>
+
+        <main>
+            <div class="metrics-row">
+                <div class="glass-card metric">
+                    <i class="fas fa-briefcase"></i>
+                    <div class="metric-info">
+                        <h3>Total Leads</h3>
+                        <p id="total-leads">--</p>
+                    </div>
+                </div>
+                <div class="glass-card metric">
+                    <i class="fas fa-code"></i>
+                    <div class="metric-info">
+                        <h3>Tech Stacks Identified</h3>
+                        <p id="tech-stacks">--</p>
+                    </div>
+                </div>
+                <div class="glass-card metric">
+                    <i class="fas fa-rss"></i>
+                    <div class="metric-info">
+                        <h3>Automation</h3>
+                        <p class="status-live">● Live</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="data-table-container glass-card">
+                <div class="table-header">
+                    <h2>Live Hiring Signals</h2>
+                    <div class="controls">
+                        <input type="text" id="search" placeholder="Search by tech stack, company..."
+                            onkeyup="filterTable()">
+                        <select id="stack-filter" onchange="filterTable()">
+                            <option value="">All Stacks</option>
+                            <option value="Python">Python</option>
+                            <option value="Django">Django</option>
+                            <option value="FastAPI">FastAPI</option>
+                            <option value="AWS">AWS</option>
+                        </select>
+                        <button id="ai-search-btn" class="btn-primary" style="background: #8b5cf6;"
+                            onclick="triggerAISearch()"><i class="fas fa-brain"></i> AI Semantic Search</button>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table id="leads-table">
+                        <thead>
+                            <tr>
+                                <th>Company</th>
+                                <th>Target Role</th>
+                                <th>AI Tech Stack Extracted</th>
+                                <th>Location</th>
+                                <th>Date Posted</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <tr>
+                                <td colspan="6" class="loading">Initializing Pipeline Data...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+
+</html>
