@@ -1,5 +1,9 @@
 # B2B Lead Gen Pipeline: Hiring Signals (SignalSync)
 
+**Live Demo:** [http://34.67.217.255/](http://34.67.217.255/)
+
+![SignalSync Dashboard Live](assets/dashboard_live.png)
+
 ## 📌 The Problem Being Solved (B2B Premise)
 B2B companies (such as recruitment agencies, cloud hosting providers, and dev-tool SaaS companies) constantly need to identify highly-qualified leads. 
 The strongest **"Buying Signal"** is active expansion. If a company is actively hiring 5 Python developers, they definitely have budget, they need cloud infrastructure, and they need development tools. 
@@ -39,6 +43,8 @@ To deploy this project to the cloud via Google Compute Engine (making use of per
    sudo docker run -d -p 80:8000 --name b2b-pipeline signalsync
    ```
 Your B2B Dashboard will instantly be live on the VM's public IP address port 80!
+
+**Currently Deployed At:** [http://34.67.217.255/](http://34.67.217.255/)
 
 ## ⚙️ How It Works (The Pipeline)
 * **Scraper (`src/pipeline/scraper.py`)**: Uses `BeautifulSoup` to paginately extract real live job data from the Python Jobs Board, reliably bypassing missing fields and logging errors.
